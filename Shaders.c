@@ -24,16 +24,18 @@ char* ReadShader(const char* filename)
 
 Shader* ShaderConstructor(const char* vertexShaderFilename, const char* fragmentShaderFilename)
 {
+	const char* pathVertexShader = GetAssetPath(vertexShaderFilename);
+	const char* pathFragmentShader = GetAssetPath(fragmentShaderFilename);
+
 	Shader* this = (Shader*)malloc(sizeof(Shader));
 	if (!this)
 	{
-		free(this);
 		return NULL;
 	}
 	DEBUG_LOG("Shader instanced");
 
-	const char* vertexShaderSource = ReadShader(vertexShaderFilename);
-	const char* fragmentShaderSource = ReadShader(fragmentShaderFilename);
+	const char* vertexShaderSource = ReadShader(pathVertexShader);
+	const char* fragmentShaderSource = ReadShader(pathFragmentShader);
 
 	if (!vertexShaderSource || !fragmentShaderSource) {
 		free((void*)vertexShaderSource);
@@ -68,6 +70,15 @@ Shader* ShaderConstructor(const char* vertexShaderFilename, const char* fragment
 	glDeleteShader(vertexShader);
 	glDeleteShader(fragmentShader);
 
+	//Set uniforms;
+	//General uniforms;
+	this->Uniforms.model = glGetUniformLocation(this->ID, "model");
+	this->Uniforms.view = glGetUniformLocation(this->ID, "view");
+	this->Uniforms.projection = glGetUniformLocation(this->ID, "projection");
+	//Additional uniforms;
+	this->Uniforms.time = glGetUniformLocation(this->ID, "Time");
+	this->Uniforms.texture0 = glGetUniformLocation(this->ID, "tex0");
+
 	free((void*)vertexShaderSource);
 	free((void*)fragmentShaderSource);
 	vertexShaderSource = NULL;
@@ -87,4 +98,11 @@ void ActivateShader(Shader* this)
 {
 	glUseProgram(this->ID);
 	//DEBUG_LOG("Shader activated");
+}
+
+void SetShaderUniform1f(Shader* this, const char* name, float value)
+{
+	GLint location = glGetUniformLocation(this->ID, name);
+	if (location != -1)
+		glUniform1f(location, value);
 }

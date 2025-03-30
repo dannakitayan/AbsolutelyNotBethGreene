@@ -10,7 +10,7 @@ typedef struct
 	GLuint ID;
 }VBO;
 
-VBO* VBOConstructor(GLfloat*, GLsizeiptr, GLuint);
+VBO* VBOConstructor(GLfloat*, GLsizeiptr);
 void VBODestructor(VBO*);
 
 void VBOBind(VBO*);

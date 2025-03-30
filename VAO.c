@@ -1,11 +1,9 @@
 #include "VAO.h"
 
-VAO* VAOConstructor(GLuint id)
+VAO* VAOConstructor()
 {
 	VAO* this = (VAO*)malloc(sizeof(VAO));
 	if (!this) return NULL;
-
-	this->ID = id;
 
 	glGenVertexArrays(1, &this->ID);
 
@@ -25,6 +23,13 @@ void LinkAttrib(VBO* vbo, GLuint layout, GLuint numComponents, GLenum type, GLsi
 	glEnableVertexAttribArray(layout);
 	DEBUG_LOG("Linked attribute (%d)", layout);
 	VBOUnbind();
+}
+
+void LinkMeshAttrib(VBO* vbo)
+{
+	LinkAttrib(vbo, 0, 3, GL_FLOAT, 8 * sizeof(float), (void*)0);
+	LinkAttrib(vbo, 1, 3, GL_FLOAT, 8 * sizeof(float), (void*)(3 * sizeof(float)));
+	LinkAttrib(vbo, 2, 2, GL_FLOAT, 8 * sizeof(float), (void*)(6 * sizeof(float)));
 }
 
 void VAOBind(VAO* this)

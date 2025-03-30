@@ -146,6 +146,7 @@
     <ClCompile Include="Input.c" />
     <ClCompile Include="Libraries\Glad\src\glad.c" />
     <ClCompile Include="Main.c" />
+    <ClCompile Include="Mesh.c" />
     <ClCompile Include="Settings.c" />
     <ClCompile Include="Shaders.c" />
     <ClCompile Include="Textures.c" />
@@ -162,7 +163,7 @@
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Map.h" />
-    <ClInclude Include="Placeholders.h" />
+    <ClInclude Include="Mesh.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Items.h" />
     <ClInclude Include="Models.h" />

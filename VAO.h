@@ -8,10 +8,11 @@ typedef struct
 	GLuint ID;
 }VAO;
 
-VAO* VAOConstructor(GLuint);
+VAO* VAOConstructor();
 void VAODestructor(VAO*);
 
 void LinkAttrib(VBO*, GLuint, GLuint, GLenum, GLsizeiptr, void*);
+void LinkMeshAttrib(VBO*);
 void VAOBind(VAO*);
 void VAOUnbind();
 

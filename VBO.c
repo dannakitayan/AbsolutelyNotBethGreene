@@ -1,11 +1,9 @@
 #include "VBO.h"
 
-VBO* VBOConstructor(GLfloat* array, GLsizeiptr size, GLuint id)
+VBO* VBOConstructor(GLfloat* array, GLsizeiptr size)
 {
 	VBO* this = (VBO*)malloc(sizeof(VBO)); 
 	if (!this) return NULL; 
-
-	this->ID = id;
 
 	glGenBuffers(1, &this->ID);
 	glBindBuffer(GL_ARRAY_BUFFER, this->ID);

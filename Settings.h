@@ -13,6 +13,7 @@ typedef struct
 	bool IsFullScreen;
 	int Width;
 	int Height;
+	int TargetFPS;
 }Settings;
 
 static const char* baseCPFullPath = NULL;

@@ -45,7 +45,7 @@ CallbackParameter CameraUp(Camera* this)
 
 CallbackParameter CameraDown(Camera* this)
 {
-    glm_vec2_copy((vec2) { this->Position[0], this->Position[1] - 1.0f }, this->Position);
+    glm_vec2_copy((vec2) { this->Position[0], this->Position[1] - 4.0f }, this->Position);
 }
 
 CallbackParameter CameraLeft(Camera* this)
@@ -55,5 +55,5 @@ CallbackParameter CameraLeft(Camera* this)
 
 CallbackParameter CameraRight(Camera* this)
 {
-    glm_vec2_copy((vec2) { this->Position[0] - 1.0f, this->Position[1] }, this->Position);
+    glm_vec2_copy((vec2) { this->Position[0] - 4.0f, this->Position[1] }, this->Position);
 }
