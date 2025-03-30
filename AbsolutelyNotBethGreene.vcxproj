@@ -157,7 +157,6 @@
     <ClInclude Include="Buttons.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Debug.h" />
-    <ClInclude Include="Doors.h" />
     <ClInclude Include="EBO.h" />
     <ClInclude Include="GeneralTypes.h" />
     <ClInclude Include="GameState.h" />
@@ -167,20 +166,12 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Items.h" />
     <ClInclude Include="Models.h" />
-    <ClInclude Include="Props.h" />
     <ClInclude Include="Settings.h" />
     <ClInclude Include="Shaders.h" />
     <ClInclude Include="Sprites.h" />
     <ClInclude Include="Textures.h" />
     <ClInclude Include="VAO.h" />
     <ClInclude Include="VBO.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="default.frag" />
-    <None Include="default.vert" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Builds\x64\Debug\Textures\Walls\placeholder.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
