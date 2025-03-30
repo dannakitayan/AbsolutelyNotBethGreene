@@ -1,0 +1,13 @@
+*.user
+*.VC.db
+.vs/
+x64/
+Debug/
+Release/
+Builds/
+Corpse P.6692750c/
+*.obj
+*.log
+*.exe
+*.dll
+*.pdb
