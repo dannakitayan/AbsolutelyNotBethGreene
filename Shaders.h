@@ -13,6 +13,9 @@ typedef struct {
     GLint projection;
     GLint time;
     GLint texture0;
+    //Water shader;
+    GLint AtlasSize;
+    GLint TextureHeight;
 } ShaderUniforms;
 
 typedef struct

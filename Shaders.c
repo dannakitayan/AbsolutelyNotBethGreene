@@ -78,6 +78,8 @@ Shader* ShaderConstructor(const char* vertexShaderFilename, const char* fragment
 	//Additional uniforms;
 	this->Uniforms.time = glGetUniformLocation(this->ID, "Time");
 	this->Uniforms.texture0 = glGetUniformLocation(this->ID, "tex0");
+	this->Uniforms.AtlasSize = glGetUniformLocation(this->ID, "TextureSize");
+	this->Uniforms.TextureHeight = glGetUniformLocation(this->ID, "WaveRepeatY");
 
 	free((void*)vertexShaderSource);
 	free((void*)fragmentShaderSource);

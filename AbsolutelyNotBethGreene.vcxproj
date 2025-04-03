@@ -167,10 +167,13 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Items.h" />
     <ClInclude Include="Models.h" />
+    <ClInclude Include="SaveFile.h" />
     <ClInclude Include="Settings.h" />
     <ClInclude Include="Shaders.h" />
     <ClInclude Include="Sprites.h" />
     <ClInclude Include="Textures.h" />
+    <ClInclude Include="uthash.h" />
+    <ClInclude Include="utlist.h" />
     <ClInclude Include="VAO.h" />
     <ClInclude Include="VBO.h" />
   </ItemGroup>

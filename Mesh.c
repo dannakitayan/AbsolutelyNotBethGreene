@@ -42,6 +42,10 @@ Mesh* MeshConstructor(int sizeX, int sizeY, int tileStartX, int tileStartY, int 
 	this->MeshShader = shader;
 	this->MeshTexture = texture;
 
+	vec2 currentAtlasSize = { (float)atlasWidth, (float)atlasHeight };
+	glm_vec2_copy(currentAtlasSize, this->AtlasSize);
+	this->TextureHeight = (float)sizeY;
+
 	this->SizeInBytes = sizeof(temporary);
 
 	memcpy(this->Vertices, temporary, this->SizeInBytes);
@@ -71,19 +75,30 @@ void MeshDestructor(Mesh* this)
 	free(this);
 }
 
-void MeshDraw(int x, int y, Mesh* mesh, Camera* camera, bool isWater, float time)
+void MeshDrawBase(int x, int y, Mesh* mesh, Camera* camera, bool isWater, float time, bool isIntro)
 {
-	vec2 position = {(float)x, (float)y};
+	vec2 position = { (float)x, (float)y };
 	glm_vec2_copy(position, mesh->Position);
 
 	ActivateShader(mesh->MeshShader);
 
-	if(isWater) SetShaderUniform1f(mesh->MeshShader, "Time", time);
+	if (isWater)
+	{
+		SetShaderUniform1f(mesh->MeshShader, "Time", time);
+		SetShaderUniform1f(mesh->MeshShader, "WaveRepeatY", mesh->TextureHeight);
+		int textureSizeLocation = glGetUniformLocation(mesh->MeshShader->ID, "TextureSize");
+		glUniform2f(textureSizeLocation, mesh->AtlasSize[0], mesh->AtlasSize[1]);
+	}
+
+	if (isIntro)
+	{
+		SetShaderUniform1f(mesh->MeshShader, "Time", time);
+	}
 
 	CameraMatrix(camera, mesh->MeshShader);
 
 	glm_mat4_identity(mesh->Model);
-	glm_translate(mesh->Model, (vec3) { mesh->Position[0], mesh->Position[1], 0.0f});
+	glm_translate(mesh->Model, (vec3) { mesh->Position[0], mesh->Position[1], 0.0f });
 
 	int modelLocation = glGetUniformLocation(mesh->MeshShader->ID, "model");
 	glUniformMatrix4fv(modelLocation, 1, GL_FALSE, mesh->Model[0]);
@@ -97,4 +112,19 @@ void MeshDraw(int x, int y, Mesh* mesh, Camera* camera, bool isWater, float time
 	while ((err = glGetError()) != GL_NO_ERROR) {
 		DEBUG_LOG("GL ERROR: %d", err);
 	}
+}
+
+void MeshDrawGeneral(int x, int y, Mesh* mesh, Camera* camera)
+{
+	MeshDrawBase(x, y, mesh, camera, false, 0, false);
+}
+
+void MeshDrawWater(int x, int y, Mesh* mesh, Camera* camera, float time)
+{
+	MeshDrawBase(x, y, mesh, camera, true, time, false);
+}
+
+void MeshDrawIntro(int x, int y, Mesh* mesh, Camera* camera, float time)
+{
+	MeshDrawBase(x, y, mesh, camera, false, time, true);
 }

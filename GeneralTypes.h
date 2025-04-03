@@ -22,6 +22,13 @@ typedef enum
 	Pause
 }SceneState;
 
+typedef enum
+{
+	AssetTexture,
+	AssetMesh,
+	AssetShader
+}AssetType;
+
 typedef void(*Callback)();
 typedef void(*CallbackParameter)(void* data);
 
