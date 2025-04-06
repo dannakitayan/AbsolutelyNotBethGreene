@@ -1,6 +1,7 @@
 #ifndef SAVEFILE_H
 #define SAVEFILE_H
 
+/*
 #include "GeneralTypes.h"
 
 typedef struct
@@ -26,5 +27,6 @@ typedef struct
 	float CompanionPositionY;
 	Direction CompanionLookAt;
 }GameFile;
+*/
 
 #endif

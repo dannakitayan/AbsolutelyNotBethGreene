@@ -5,7 +5,7 @@
 #include "Shaders.h"
 #include <cglm.h>
 #include <stdbool.h>
-#include "GeneralTypes.h"
+#include "EngineTypes.h"
 
 #include "ANBG_Engine.h"
 

@@ -111,7 +111,7 @@
       <ConformanceMode>true</ConformanceMode>
       <CompileAs>CompileAsC</CompileAs>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(ProjectDir)Engine</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Libraries\SDL3_image;$(SolutionDir)Libraries\SDL3\include;$(SolutionDir)Libraries\Glad\include;$(SolutionDir)Libraries\cglm-0.9.6\include\cglm;$(SolutionDir)Engine\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -140,10 +140,11 @@
     <ClCompile Include="Game.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\SaveFile.h" />
+    <ResourceCompile Include="resource.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="resource.rc" />
+    <ClInclude Include="GameTypes.h" />
+    <ClInclude Include="SaveFile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

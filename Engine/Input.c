@@ -7,13 +7,13 @@ void Input(SDL_Event* event, InputActions actions)
 		switch (event->type)
 		{
 		case SDL_EVENT_QUIT:
-			IsGameEnd = true;
+			IsEngineDown = true;
 			break;
 		case SDL_EVENT_KEY_DOWN:
 			if (event->key.scancode == SDL_SCANCODE_ESCAPE)
 			{
 				DEBUG_LOG("EXIT GAME");
-				IsGameEnd = true;
+				IsEngineDown = true;
 				break;
 			}
 

@@ -3,7 +3,7 @@
 
 #include "uthash.h"
 #include "Map.h"
-#include "GeneralTypes.h"
+#include "EngineTypes.h"
 
 #include "ANBG_Engine.h"
 

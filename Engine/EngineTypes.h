@@ -1,28 +1,15 @@
-#ifndef GENERALTYPES_H
-#define GENERALTYPES_H
+#ifndef ENGINETYPES_H
+#define ENGINETYPES_H
 
 #include "ANBG_Engine.h"
 
 typedef enum
 {
-	Forward,
-	Backward,
+	Up,
+	Down,
 	Left,
 	Right
 }Direction;
-
-typedef enum
-{
-	Intro0,
-	Intro1,
-	Intro2,
-	Intro3,
-	Title,
-	MainMenu,
-	SettingsMenu,
-	Game,
-	Pause
-}SceneState;
 
 typedef enum
 {
