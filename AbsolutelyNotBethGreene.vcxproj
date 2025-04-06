@@ -73,7 +73,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)\Libraries\Engine\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(ShortProjectName)\Builds\$(Platform)\$(Configuration)\</IntDir>
+    <IntDir>$(SolutionDir)\Builds\Intermediate\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -140,39 +140,39 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Camera.c" />
-    <ClCompile Include="Animations.c" />
-    <ClCompile Include="EBO.c" />
-    <ClCompile Include="GameState.c" />
-    <ClCompile Include="Input.c" />
-    <ClCompile Include="Libraries\Glad\src\glad.c" />
-    <ClCompile Include="Mesh.c" />
-    <ClCompile Include="Settings.c" />
-    <ClCompile Include="Shaders.c" />
-    <ClCompile Include="Textures.c" />
-    <ClCompile Include="VAO.c" />
-    <ClCompile Include="VBO.c" />
+    <ClInclude Include="Engine\ANBG_Engine.h" />
+    <ClInclude Include="Engine\Animations.h" />
+    <ClInclude Include="Engine\Buffers.h" />
+    <ClInclude Include="Engine\Camera.h" />
+    <ClInclude Include="Engine\Debug.h" />
+    <ClInclude Include="Engine\EBO.h" />
+    <ClInclude Include="Engine\GameState.h" />
+    <ClInclude Include="Engine\GameWindow.h" />
+    <ClInclude Include="Engine\GeneralTypes.h" />
+    <ClInclude Include="Engine\Input.h" />
+    <ClInclude Include="Engine\Map.h" />
+    <ClInclude Include="Engine\Mesh.h" />
+    <ClInclude Include="Engine\Settings.h" />
+    <ClInclude Include="Engine\Shaders.h" />
+    <ClInclude Include="Engine\Textures.h" />
+    <ClInclude Include="Engine\uthash.h" />
+    <ClInclude Include="Engine\utlist.h" />
+    <ClInclude Include="Engine\VAO.h" />
+    <ClInclude Include="Engine\VBO.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ANBG_Engine.h" />
-    <ClInclude Include="Buffers.h" />
-    <ClInclude Include="Camera.h" />
-    <ClInclude Include="Animations.h" />
-    <ClInclude Include="Debug.h" />
-    <ClInclude Include="EBO.h" />
-    <ClInclude Include="GameWindow.h" />
-    <ClInclude Include="GeneralTypes.h" />
-    <ClInclude Include="GameState.h" />
-    <ClInclude Include="Input.h" />
-    <ClInclude Include="Map.h" />
-    <ClInclude Include="Mesh.h" />
-    <ClInclude Include="Settings.h" />
-    <ClInclude Include="Shaders.h" />
-    <ClInclude Include="Textures.h" />
-    <ClInclude Include="uthash.h" />
-    <ClInclude Include="utlist.h" />
-    <ClInclude Include="VAO.h" />
-    <ClInclude Include="VBO.h" />
+    <ClCompile Include="Engine\Animations.c" />
+    <ClCompile Include="Engine\Camera.c" />
+    <ClCompile Include="Engine\EBO.c" />
+    <ClCompile Include="Engine\GameState.c" />
+    <ClCompile Include="Engine\Input.c" />
+    <ClCompile Include="Engine\Mesh.c" />
+    <ClCompile Include="Engine\Settings.c" />
+    <ClCompile Include="Engine\Shaders.c" />
+    <ClCompile Include="Engine\Textures.c" />
+    <ClCompile Include="Engine\VAO.c" />
+    <ClCompile Include="Engine\VBO.c" />
+    <ClCompile Include="Libraries\Glad\src\glad.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
