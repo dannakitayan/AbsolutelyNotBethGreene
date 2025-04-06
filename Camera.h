@@ -7,6 +7,8 @@
 #include <stdbool.h>
 #include "GeneralTypes.h"
 
+#include "ANBG_Engine.h"
+
 typedef struct
 {
 	vec2 Position;
@@ -19,13 +21,13 @@ typedef struct
 	mat4 Multiply;
 }Camera;
 
-Camera* CameraConstructor(float, float, vec2);
-void CameraMatrix(Camera*, Shader*);
-void SetLock(bool, bool);
+ANBG_API Camera* CameraConstructor(float, float, vec2);
+ANBG_API void CameraMatrix(Camera*, Shader*);
+ANBG_API void SetLock(bool, bool);
 
-CallbackParameter CameraUp(Camera*);
-CallbackParameter CameraDown(Camera*);
-CallbackParameter CameraLeft(Camera*);
-CallbackParameter CameraRight(Camera*);
+ANBG_API CallbackParameter CameraUp(Camera*);
+ANBG_API CallbackParameter CameraDown(Camera*);
+ANBG_API CallbackParameter CameraLeft(Camera*);
+ANBG_API CallbackParameter CameraRight(Camera*);
 
 #endif

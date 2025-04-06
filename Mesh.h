@@ -11,6 +11,8 @@
 #include "Textures.h"
 #include "Camera.h"
 
+#include "ANBG_Engine.h"
+
 typedef struct
 {
 	GLfloat* Vertices;
@@ -26,15 +28,15 @@ typedef struct
 	float TextureHeight;
 }Mesh;
 
-extern const GLuint Indices[];
-extern const size_t IndicesSizeInBytes;
+ANBG_API extern const GLuint Indices[];
+ANBG_API extern const size_t IndicesSizeInBytes;
 
-Mesh* MeshConstructor(int, int, int, int, int, int, int, EBO*, Shader*, Texture*);
-void MeshDestructor(Mesh*);
-void MeshDrawGeneral(int, int, Mesh*, Camera*);
-void MeshDrawWater(int, int, Mesh*, Camera*, float);
-void MeshDrawIntro(int, int, Mesh*, Camera*, float);
-void MeshDrawLogo(int, int, Mesh*, Camera*, float);
-void MeshDrawBackground(int, int, Mesh*, Camera*, float, vec3);
+ANBG_API Mesh* MeshConstructor(int, int, int, int, int, int, int, EBO*, Shader*, Texture*);
+ANBG_API void MeshDestructor(Mesh*);
+ANBG_API void MeshDrawGeneral(int, int, Mesh*, Camera*);
+ANBG_API void MeshDrawWater(int, int, Mesh*, Camera*, float);
+ANBG_API void MeshDrawIntro(int, int, Mesh*, Camera*, float);
+ANBG_API void MeshDrawLogo(int, int, Mesh*, Camera*, float);
+ANBG_API void MeshDrawBackground(int, int, Mesh*, Camera*, float, vec3);
 
 #endif 

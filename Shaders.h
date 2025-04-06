@@ -7,6 +7,8 @@
 #include "Debug.h"
 #include "Settings.h"
 
+#include "ANBG_Engine.h"
+
 typedef struct {
     GLint model;
     GLint view;
@@ -24,11 +26,11 @@ typedef struct
     ShaderUniforms Uniforms;
 }Shader;
 
-Shader* ShaderConstructor(const char*, const char*);
-void ShaderDestructor(Shader*);
+ANBG_API Shader* ShaderConstructor(const char*, const char*);
+ANBG_API void ShaderDestructor(Shader*);
 
-void ActivateShader(Shader*);
-char* ReadShader(const char*);
+ANBG_API void ActivateShader(Shader*);
+ANBG_API char* ReadShader(const char*);
 
-void SetShaderUniform1f(Shader*, const char*, float);
+ANBG_API void SetShaderUniform1f(Shader*, const char*, float);
 #endif

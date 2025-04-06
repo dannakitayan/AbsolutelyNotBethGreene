@@ -6,6 +6,8 @@
 #include "Debug.h"
 #include "GeneralTypes.h"
 
-void Input(SDL_Event*, InputActions);
+#include "ANBG_Engine.h"
+
+ANBG_API void Input(SDL_Event*, InputActions);
 
 #endif

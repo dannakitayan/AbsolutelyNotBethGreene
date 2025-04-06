@@ -1,6 +1,8 @@
 #ifndef GENERALTYPES_H
 #define GENERALTYPES_H
 
+#include "ANBG_Engine.h"
+
 typedef enum
 {
 	Forward,

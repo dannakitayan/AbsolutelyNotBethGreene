@@ -5,6 +5,8 @@
 #include "Map.h"
 #include "GeneralTypes.h"
 
+#include "ANBG_Engine.h"
+
 //Assets storage;
 typedef struct
 {
@@ -14,9 +16,9 @@ typedef struct
 	UT_hash_handle HashHandle;
 }Container;
 
-extern Container* TexturesStorage = NULL;
-extern Container* ShadersStorage = NULL;
-extern Container* MeshesStorage = NULL;
+ANBG_API extern Container* TexturesStorage = NULL;
+ANBG_API extern Container* ShadersStorage = NULL;
+ANBG_API extern Container* MeshesStorage = NULL;
 
 
 #endif

@@ -3,6 +3,8 @@
 
 #include "Mesh.h"
 
+#include "ANBG_Engine.h"
+
 typedef struct
 {
 	int TileSize[2];

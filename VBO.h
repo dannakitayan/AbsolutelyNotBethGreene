@@ -5,15 +5,17 @@
 #include <stdlib.h>
 #include "Debug.h"
 
+#include "ANBG_Engine.h"
+
 typedef struct
 {
 	GLuint ID;
 }VBO;
 
-VBO* VBOConstructor(GLfloat*, GLsizeiptr);
-void VBODestructor(VBO*);
+ANBG_API VBO* VBOConstructor(GLfloat*, GLsizeiptr);
+ANBG_API void VBODestructor(VBO*);
 
-void VBOBind(VBO*);
-void VBOUnbind();
+ANBG_API void VBOBind(VBO*);
+ANBG_API void VBOUnbind(void);
 
 #endif

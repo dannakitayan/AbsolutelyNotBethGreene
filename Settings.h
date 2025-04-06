@@ -21,7 +21,7 @@ static const char* baseCPFolderPath = "BaseCP\\";
 static size_t baseCPFullPathSize = 0;
 
 //Get the path to the BaseCP folder;
-const char* GetBaseCPFolderPath();
+const char* GetBaseCPFolderPath(void);
 const char* GetAssetPath(const char*);
 
 #endif

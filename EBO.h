@@ -5,15 +5,17 @@
 #include <stdlib.h>
 #include "Debug.h"
 
+#include "ANBG_Engine.h"
+
 typedef struct
 {
 	GLuint ID;
 }EBO;
 
-EBO* EBOConstructor(GLuint*, GLsizeiptr, GLuint);
-void EBODestructor(EBO*);
+ANBG_API EBO* EBOConstructor(GLuint*, GLsizeiptr, GLuint);
+ANBG_API void EBODestructor(EBO*);
 
-void EBOBind(EBO*);
-void EBOUnbind();
+ANBG_API void EBOBind(EBO*);
+ANBG_API void EBOUnbind(void);
 
 #endif

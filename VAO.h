@@ -3,17 +3,19 @@
 
 #include"VBO.h"
 
+#include "ANBG_Engine.h"
+
 typedef struct
 {
 	GLuint ID;
 }VAO;
 
-VAO* VAOConstructor();
-void VAODestructor(VAO*);
+ANBG_API VAO* VAOConstructor(void);
+ANBG_API void VAODestructor(VAO*);
 
-void LinkAttrib(VBO*, GLuint, GLuint, GLenum, GLsizeiptr, void*);
-void LinkMeshAttrib(VBO*);
-void VAOBind(VAO*);
-void VAOUnbind();
+ANBG_API void LinkAttrib(VBO*, GLuint, GLuint, GLenum, GLsizeiptr, void*);
+ANBG_API void LinkMeshAttrib(VBO*);
+ANBG_API void VAOBind(VAO*);
+ANBG_API void VAOUnbind(void);
 
 #endif

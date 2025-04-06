@@ -7,17 +7,19 @@
 #include "Settings.h"
 #include "Debug.h"
 
+#include "ANBG_Engine.h"
+
 typedef struct
 {
 	GLuint ID;
 	GLenum Type;
 }Texture;
 
-Texture* TextureConstructor(const char*, GLenum, GLenum, GLenum, GLenum);
-void TextureDestructor(Texture*);
+ANBG_API Texture* TextureConstructor(const char*, GLenum, GLenum, GLenum, GLenum);
+ANBG_API void TextureDestructor(Texture*);
 
-void TextureUnit(Shader*, const char*, GLuint);
-void TextureBind(Texture*);
-void TextureUnbind(Texture*);
+ANBG_API void TextureUnit(Shader*, const char*, GLuint);
+ANBG_API void TextureBind(Texture*);
+ANBG_API void TextureUnbind(Texture*);
 
 #endif
